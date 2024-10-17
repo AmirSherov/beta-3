@@ -1,17 +1,32 @@
 import "./style.scss";
-import AIpart from './AIpart/index.jsx'
-import Logos from './Logos/index.jsx'
-import Acsions from './Acsions/index.jsx'
+import NewsData from '../../../DataBase.json';
+import img1 from '../../assets/images/logo.jpg'
+const images = {
+    "logo.jpg": img1,
+    // Добавьте другие изображения, если нужно
+};
 function Home(props) {
     return (
         <>
-            <AIpart />
-            <Logos />
-            <div className="Acsions">
-                <div className="text">Harness the power of AI, making search engine optimization intuitive and effective for all skill levels.</div>
-                <Acsions />
+            <div className="home-wrapper">
+                {NewsData.News.map((news, index) => {
+                    const Img = images[news.Img];
+                    return (
+                        <div key={index + 1} className="news-wrapper">
+                            <div className="news-main-text">
+                                {news.Main}
+                            </div>
+                            <div className="news-img">
+                                <img src={Img}  alt="" />
+                            </div>
+                            <div className="news-next-text">
+                                {news.Next}
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
         </>
     )
 }
-export default Home
+export default Home;

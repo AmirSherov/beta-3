@@ -1,34 +1,72 @@
 @use '../../assets/styles/resets';
 @import '../../assets/styles/setting';
 
-.Acsions {
+.home-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
     justify-content: center;
     align-items: center;
-    position: relative;
-    left: 19%;
-    width: 80%;
-    height: 100%;
-    .text {
-        position: relative;
-        left: 24%;
+    background-color: $light;
+
+    .news-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 80%;
         text-align: center;
-        width: 400px;
-        font-size: 30px;
-        color: $light;
-    }
-    @media (max-width:700px) {
-        .text{
-            left: 3%;
+        border-radius: 10px;
+        box-shadow: 2px 5px 10px $violet;
+        margin-bottom: 50px;
+        transition: box-shadow 0.3s;
+
+        &:hover {
+            box-shadow: 6px 10px 20px $violet;
         }
-    }
-    @media (max-width:390px) {
-        .text{
-            left: -20%;
+
+        .news-main-text {
+            font-size: 50px;
+            font-weight: 900;
+            color: black;
+        }
+
+        .news-next-text {
             font-size: 20px;
-            width: 390px;
+            font-weight: 900;
+            color: black;
+            width: 100%;
+            text-align: center;
+            transition: opacity 1s ease; // Плавный переход для появления текста
         }
-    }
-    @media (max-width:390px) {
-        left:10%;
+
+        .news-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: auto; // Автоматическая высота для лучшей адаптивности
+            max-width: 700px; // Максимальная ширина изображения
+            margin: 0 auto; // Центрирование изображения
+
+            img {
+                border-radius: 10px;
+                width: 100%;
+                height: auto; // Автоматическая высота для поддержания пропорций
+            }
+        }
+
+        // Скрыть текст на экранах ниже 500px и показать его при наведении
+        @media (max-width: 500px) {
+            .news-next-text {
+                display: none;
+            }
+            &:hover .news-next-text {
+                display: block; // Показать текст
+                opacity: 1; // Установить видимость
+                font-size: 10px;
+            }
+        }
     }
 }

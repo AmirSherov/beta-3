@@ -1,48 +1,32 @@
 import "./style.scss";
-import 'sweetalert2/src/sweetalert2.scss';
-import Logo from '../../../assets/images/Logo.png'
+import Logo from "../../../assets/images/logo.jpg";
 
 function Nav(props) {
   function menuToggler(e) {
-    const menu = document.getElementById("menu-wrapper");
+    const menu = document.querySelector(".modal-menu");
     menu.classList.toggle("active");
-
     if (menu.classList.contains("active")) {
-      menu.style.transform = "translateY(0px)";
+      menu.style.transform = "translateX(0)";
     } else {
-      menu.style.transform = "translateY(-1500px)";
+      menu.style.transform = "translateX(-100%)";
     }
   }
-
   return (
     <>
       <div className="nav-wrapper">
-        <div className="logo">
-          <img src={Logo} alt="" />
-        </div>
-        <div className="nav-LinksContainer">
-          <div>Featurest</div>
-          <div>Developers</div>
-          <div>Company</div>
-          <div>Blog</div>
-          <div>Changelog</div>
-        </div>
-        <div className="nav-button">
-          <button>Join waitlist</button>
+        <div className="nav-logo">
+          <img src={Logo} width={50} style={{ borderRadius: "50%" }} height={50} alt="" />
+          <span>News </span>  <span>  <i>  -50</i></span>
         </div>
         <div onClick={() => menuToggler()} className="menu-toggler">
           <div></div>
           <div></div>
           <div></div>
         </div>
-      </div>
-      <div id="menu-wrapper">
-        <div className="menu-links-container">
-          <div>Featurest</div>
-          <div>Developers</div>
-          <div>Company</div>
-          <div>Blog</div>
-          <div>Changelog</div>
+        <div className="modal-menu">
+          <div className="modal-text">
+          More opportunities will be soon 😊
+          </div>
         </div>
       </div>
     </>
