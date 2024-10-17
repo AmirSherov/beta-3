@@ -1,0 +1,56 @@
+$violet: #7E33E0;
+$violet-light: #F6F5FF;
+$violet-dark: #F1F0FF;
+
+$green: #08D15F;
+$green-light: #EBF4F3;
+$border: #E7E6EF;
+$red-gradient:rgba(131, 2, 2, 0.818);
+$red: #FB2E86;
+$darkest-blue: #0D0E43;
+$light: #FFFFFF;
+$black: #111;
+$red-gradient: linear-gradient(to bottom, #f8f8f8, #ff00cc);
+// ======================================================================
+// ======================= FLEX =========================================
+// ======================================================================
+@mixin flex($direction: row, $align: center, $justify: center, $gap:10px) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+// ======================================================================
+// ======================= GRID =========================================
+// ======================================================================
+@mixin grid($columns:12, $size:1fr, $gap:10px) {
+    display: grid;
+    grid-template-columns: repeat($columns, $size);
+    gap: $gap;
+}
+// ======================================================================
+@mixin darken_bg_on_hover($color, $percent: 20%) {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        transition: 0.2s linear;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        border-radius: 10px;
+        left: 0;
+        right: 100%;
+        z-index: 0;
+        background: darken($color, $percent);
+    }
+
+    &:hover::before {
+        z-index: -1;
+        border-radius: 10px;
+        left: 0;
+        right: 0;
+    }
+}

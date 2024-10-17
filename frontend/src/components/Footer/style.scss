@@ -1,0 +1,134 @@
+@use "../../assets/styles/resets";
+@import "../../assets/styles/setting";
+
+footer {
+    width: 100%;
+    height: 300px;
+    max-height: 100%;
+    background: #3d3d3d;
+    position: relative;
+    color: $light;
+    user-select: none;
+
+    p:hover {
+        color: $red;
+        box-shadow: 2px 2px 0.1px $red;
+        transform: scale(1.040);
+
+        .linksNav:hover {
+            color: $red;
+        }
+    }
+
+    .info {
+        position: absolute;
+        left: 13%;
+        top: 67%;
+        color: #8A8FB9;
+        font-size: 12px;
+    }
+
+    h1 {
+        position: absolute;
+        left: 15%;
+        top: 25%;
+    }
+
+    .Pages {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: absolute;
+        left: 80%;
+        top: 15%;
+        color: $light;
+
+        .linksNav {
+            color: $light;
+        }
+    }
+
+    .items {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        height: 40px;
+        color: $light;
+        background-color: $violet;
+
+        .text {
+            position: absolute;
+            left: 25%;
+            top: 30%;
+        }
+    }
+
+    .footerLogo {
+        color: $light;
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    @media (max-width:1286px) {
+        h1 {
+            position: absolute;
+            left: 8%;
+        }
+
+        .info {
+            position: absolute;
+            left: 3%;
+            word-wrap: break-word;
+        }
+    }
+
+    @media (max-width:1170px) {
+        h1 {
+            position: relative;
+            top: 10%;
+            width: 100px;
+        }
+
+        .info {
+            position: absolute;
+            top: 30%;
+            left: 8%;
+        }
+
+    }
+
+    @media (max-width:740px) {
+        height: 450px;
+        h1 {
+            width: 100px;
+        }
+
+        .Pages {
+            position: absolute;
+            left: 42%;
+            top: 45%;
+        }
+
+        @media (max-width:430px) {
+            height: 500px;
+
+            h1 {
+                top: 5%;
+                width: 100px;
+            }
+
+            .info {
+                top: 25%;
+            }
+
+            .Pages {
+                left: 8%;
+                top: 50%;
+            }
+
+            .items {
+                text-align: center;
+            }
+        }
+    }
+}
