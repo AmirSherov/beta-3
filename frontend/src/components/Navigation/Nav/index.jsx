@@ -20,11 +20,11 @@ function Nav(props) {
     const back = document.querySelector("#theme-toggler-back");
     back.classList.toggle("active");
     if (back.classList.contains("active")) {
-      back.style.transform = "translateX(0)";
-      dispatch({ type: "darkMode", payload: false })
-    } else {
       back.style.transform = "translateX(37px)";
       dispatch({ type: "darkMode", payload: true })
+    } else {
+      back.style.transform = "translateX(0)";
+      dispatch({ type: "darkMode", payload: false })
     }
   }
   return (
