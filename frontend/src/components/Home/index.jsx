@@ -1,9 +1,11 @@
 import "./style.scss";
 import NewsData from '../../../DataBase.json';
 import img1 from '../../assets/images/logo.jpg'
+import img2 from '../../assets/images/photo2.jpg'
 const images = {
-    "logo.jpg": img1,
     // Добавьте другие изображения, если нужно
+    "logo.jpg": img1,
+    "photo2.jpg": img2
 };
 function Home(props) {
     return (
