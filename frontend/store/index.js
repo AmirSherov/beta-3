@@ -4,7 +4,7 @@ import { globalReducer } from './helpers.js'
 const context = createContext()
 
 const initialState = {
-    navEmailAddres: ''
+    "darkMode" : false
 }
 
 export {
