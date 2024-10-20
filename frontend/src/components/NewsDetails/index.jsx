@@ -6,19 +6,21 @@ import img1 from '../../assets/images/logo.jpg';
 import img2 from '../../assets/images/photo2.jpg';
 import { Link } from 'react-router-dom';
 function NewsDetails(props) {
+
     const { id } = useParams();
     const [data, setData] = useState({});
-
+    const [modal, setModal] = useState(false)
     useEffect(() => {
-
         const newsItem = DataBase.News.find(news => news.Id === parseInt(id));
 
         if (newsItem) {
+            setModal(true)
+            setTimeout(() => {
+                setModal(false)
+            } , 2000)
             setData(newsItem);
         }
     }, [id]);
-
-
     if (!data) {
         return <div>Загрузка...</div>;
     }
@@ -37,7 +39,7 @@ function NewsDetails(props) {
         <>
             <div className="NewsDetailsMainContainer">
                 <Link className='back-link' to={"/"}> ←
-                Back</Link>
+                    Back</Link>
                 <div className="NewsDetailsContainer">
                     <div className="NewsDetailsMainText">
                         <span>{data.Main}</span>
@@ -53,6 +55,23 @@ function NewsDetails(props) {
                     </div>
                 </div>
             </div>
+            {modal &&
+                <div className="loading">
+                    <div class="lds-spinner">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>}
         </>
     )
 }
