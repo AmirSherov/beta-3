@@ -4,6 +4,7 @@ import img1 from '../../assets/images/logo.jpg';
 import img2 from '../../assets/images/photo2.jpg';
 import { context } from "../../../store";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 const images = {
     // Добавьте другие изображения, если нужно
@@ -13,13 +14,13 @@ const images = {
 
 function Home(props) {
     const { state } = useContext(context);
-    
+
     return (
         <>
             <div className="home-wrapper">
                 {NewsData.News.map((news, index) => {
-                    const Img = images[news.Img] || ''; 
-                    
+                    const Img = images[news.Img] || '';
+
                     return (
                         <div
                             style={{
@@ -28,13 +29,13 @@ function Home(props) {
                             key={index}
                             className="news-wrapper"
                         >
-                            <div style = {{color: state.darkMode ? "white" : "black"}} className="news-main-text">
-                                {news.Main}
+                            <div style={{ color: state.darkMode ? "white" : "black" }} className="news-main-text">
+                                <span>{news.Main}</span> <span><Link to={`/news/${news.Id}`} style={{ textDecoration: "none" }}>More</Link></span>
                             </div>
                             <div className="news-img">
-                                {Img && <img src={Img} alt="" />}  
+                                {Img && <img src={Img} alt="" />}
                             </div>
-                            <div style = {{color: state.darkMode ? "white" : "black"}}  className="news-next-text">
+                            <div style={{ color: state.darkMode ? "white" : "black" }} className="news-next-text">
                                 {news.Next}
                             </div>
                         </div>

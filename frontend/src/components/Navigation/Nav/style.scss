@@ -9,6 +9,9 @@
    padding-top: 10px;
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
    margin-bottom: 50px;
+   position: fixed;
+   top: 0;
+   left: 0;
    display: flex;
    z-index: 1000;
 
@@ -71,12 +74,14 @@
       top: 0;
       left: 0;
       transform: translate(-100%, 0);
+
       .modal-items {
          display: flex;
          flex-direction: column;
          height: 140px;
          transform: translateY(100px);
          gap: 50px;
+
          .theme-toggler {
             display: flex;
             margin: 0 auto;
@@ -88,6 +93,7 @@
             width: 65px;
             height: 30px;
             position: relative;
+
             div:nth-child(1) {
                width: 27px;
                height: 27px;
@@ -97,6 +103,7 @@
                padding-top: 5px;
                padding-right: 0px;
             }
+
             div:nth-child(3) {
                width: 27px;
                height: 27px;
@@ -109,6 +116,7 @@
                padding-top: 5px;
                margin: 0 auto;
             }
+
             div:nth-child(2) {
                width: 28px;
                height: 28px;
@@ -124,21 +132,25 @@
    }
 
    @media (max-width: 390px) {
-      .nav-logo{
+      .nav-logo {
          font-size: 30px;
-         span:nth-child(3){
+
+         span:nth-child(3) {
             font-size: 30px;
          }
       }
    }
+
    @media (max-width: 320px) {
-      .nav-logo{
+      .nav-logo {
          font-size: 30px;
-         span:nth-child(3){
+
+         span:nth-child(3) {
             font-size: 30px;
          }
       }
-      .menu-toggler{
+
+      .menu-toggler {
          left: 10px;
       }
    }

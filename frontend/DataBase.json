@@ -1,11 +1,13 @@
 {
   "News": [
     {
+      "Id" : 1,
       "Main" : "Beta Testing",
       "Img":"logo.jpg",
       "Next":"News -50 is in Beta Testing now :)"
     },
     {
+      "Id" : 2,
       "Main" : "9 -A Sinf 'Jadidchilari'",
       "Img":"photo2.jpg",
       "Next":"Bugun 9- A sinf 'Jadidchilar' sahnasini tashkil etdilar :)"

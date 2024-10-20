@@ -4,6 +4,7 @@ import { FaRegMoon } from "react-icons/fa6";
 import Logo from "../../../assets/images/logo.jpg";
 import { useState, useEffect, useContext } from "react";
 import { context, initialState } from "../../../../store";
+import { Link } from "react-router-dom";
 
 function Nav(props) {
   const { state, dispatch } = useContext(context)
@@ -30,10 +31,11 @@ function Nav(props) {
   return (
     <>
       <div style={{ backgroundColor: state.darkMode ? "black" : "white" }} className="nav-wrapper">
+        <Link to={"/"}>
         <div className="nav-logo">
           <img src={Logo} width={50} style={{ borderRadius: "50%" }} height={50} alt="" />
           <span>News </span>  <span>  <i style={{ color: state.darkMode ? "white" : "black" }}>  -50</i></span>
-        </div>
+        </div></Link>
         <div onClick={() => menuToggler()} className="menu-toggler">
           <div></div>
           <div></div>
